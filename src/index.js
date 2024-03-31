@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 var cors = require("cors");
 
+const bodyParser = require("body-parser");
+
 app.use(cors());
 
 const dotenv = require("dotenv");
@@ -13,7 +15,8 @@ const middlewareLogRequest = require("./middleware/logs.js");
 const sequelize = require("./config/db.js");
 
 app.use(middlewareLogRequest); // ini middleware menunjukan berjalan di path mana
-app.use(express.json()); // Untuk mengizinkan membaca badan JSON
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use("/assets", express.static("public/images")); //Middleware ini digunakan untuk menyajikan file statis, seperti gambar, stylesheet, atau script JavaScript, kepada klien
 
 // meddleware untuk menghandle error upload dll (error handling)
@@ -22,6 +25,9 @@ app.use((err, req, res, next) => {
     message: err.message,
   });
 });
+
+const router = require("./routes");
+app.use(router);
 
 app.listen(PORT, async () => {
   try {
