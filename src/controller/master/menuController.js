@@ -1,6 +1,6 @@
 const createMasterMenuService = require("../../services/master/menu/createMasterMenuService");
 const deleteMasterMenuService = require("../../services/master/menu/deleteMasterMenuService");
-const fetchAllMasterMenuService = require("../../services/master/menu/fetchAllMasterMenuService");
+const fetchAllMasterMenuService = require("../../services/master/menu/fetchMasterMenuService");
 const findOneMasterMenuService = require("../../services/master/menu/findOneMasterMenuService");
 const updateMasterMenuServive = require("../../services/master/menu/updateMasterMenuService");
 
@@ -26,7 +26,7 @@ const getAllMasterMenu = async (req, res) => {
     data: result,
   });
 };
-const findOneMasterAdmin = async (req, res) => {
+const findOneMasterMenu = async (req, res) => {
   const result = await findOneMasterMenuService(req, res);
   return res.status(200).send({
     message: "Data fetched succesfully",
@@ -45,6 +45,6 @@ module.exports = {
   createMasterMenu,
   deleteMasterMenu,
   getAllMasterMenu,
-  findOneMasterAdmin,
+  findOneMasterMenu,
   updateMasterMenu,
 };
