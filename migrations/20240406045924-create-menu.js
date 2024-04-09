@@ -12,10 +12,10 @@ module.exports = {
       category_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        // references: {
-        //   model: "MasterMenuCategories",
-        //   key: "id",
-        // },
+        references: {
+          model: "MasterMenuCategories",
+          key: "id",
+        },
         onUpdate: "CASCADE",
       },
       name: {
