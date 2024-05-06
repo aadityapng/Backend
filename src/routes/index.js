@@ -24,7 +24,7 @@ const masterMenuRoute = require("./master/master-menu.js");
 router.use("/master-menu", masterMenuRoute);
 
 // Routing untuk Master Table
-const masterTableRoute = require("./routes/masterTableRoute");
+const masterTableRoute = require("./master/master-table");
 router.use("/master-table", masterTableRoute);
 
 // Routing untuk List Menu
@@ -36,7 +36,7 @@ const cartRoute = require("./user/cartRoute.js");
 router.use("/api", cartRoute);
 
 // Routing untuk Payment
-const paymentRoute = require('./routes/paymentRoute');
-router.use('/api', paymentRoute);
+const paymentRoute = require("./routes/paymentRoute");
+router.use("/api", paymentRoute);
 
 module.exports = router;
