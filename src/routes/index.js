@@ -36,7 +36,7 @@ const cartRoute = require("./user/cartRoute.js");
 router.use("/api", cartRoute);
 
 // Routing untuk Payment
-const paymentRoute = require("./routes/paymentRoute");
+const paymentRoute = require("./user/paymentRoute");
 router.use("/api", paymentRoute);
 
 module.exports = router;

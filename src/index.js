@@ -11,10 +11,8 @@ dotenv.config();
 
 const PORT = process.env.PORT || 8000;
 
-const middlewareLogRequest = require("./middleware/logs.js");
 const sequelize = require("./config/db.js");
 
-app.use(middlewareLogRequest); // ini middleware menunjukan berjalan di path mana
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/assets", express.static("public/images")); //Middleware ini digunakan untuk menyajikan file statis, seperti gambar, stylesheet, atau script JavaScript, kepada klien
