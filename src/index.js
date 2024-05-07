@@ -2,9 +2,29 @@ const express = require("express");
 const app = express();
 var cors = require("cors");
 
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"),
+  swaggerJsdoc = require("swagger-jsdoc"),
+  swaggerUi = require("swagger-ui-express");
+
+const path = require("path");
+
+// swagger options
+const options = {
+  definition: {
+    openapi: "3.1.0",
+    info: {
+      title: "Platinum API Documentation",
+      version: "0.1.0",
+      description: "Platinum API Documentation",
+    },
+  },
+  apis: [path.join(__dirname, "./routes/**/*.js")],
+};
 
 app.use(cors());
+
+const specs = swaggerJsdoc(options);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 const dotenv = require("dotenv");
 dotenv.config();
