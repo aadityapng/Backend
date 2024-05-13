@@ -143,6 +143,7 @@
 
 const express = require("express");
 const router = express.Router();
+const upload = require("../../middleware/multer");
 
 const {
   createMasterMenu,
@@ -153,9 +154,9 @@ const {
 } = require("../../controller/master/menuController");
 
 router.get("/menu", getAllMasterMenu);
-router.post("/", createMasterMenu);
+router.post("/", upload.single("menu_photo"), createMasterMenu);
 router.get("/:id", findOneMasterMenu);
-router.put("/:id", updateMasterMenu);
+router.put("/:id", upload.single("menu_photo"), updateMasterMenu);
 router.delete("/:id", deleteMasterMenu);
 
 module.exports = router;
