@@ -27,6 +27,10 @@ module.exports = {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
       },
+      menu_photo: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -36,11 +40,11 @@ module.exports = {
         type: Sequelize.STRING,
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE,
       },
       updatedBy: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING,
       },
       deletedAt: {
