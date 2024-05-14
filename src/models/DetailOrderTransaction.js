@@ -26,7 +26,11 @@ const DetailOrderTransaction = sequelize.define('DetailOrderTransaction', {
   total_price: {
     type: DataTypes.FLOAT,
     allowNull: false
-  }
+  },
+  notes: {
+    type: Sequelize.TEXT,
+    allowNull: true,
+  },
 }, {
   timestamps: false,
   tableName: 'DetailOrderTransactions'

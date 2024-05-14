@@ -19,11 +19,15 @@ const Menu = sequelize.define('Menus', {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
   },
+  menu_photo: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
   },
-  createBy: {
+  createdBy: {
     allowNull: false,
     type: DataTypes.STRING,
   },
@@ -33,11 +37,11 @@ const Menu = sequelize.define('Menus', {
   updatedBy: {
     type: DataTypes.STRING,
   },
-  deleteAt: {
+  deletedAt: {
     type: DataTypes.DATE,
   },
-  deleteBy: {
-    type: DataTypes.STRING,
+  deletedBy: {
+    type: DataTypes.TEXT,
   },
 }, {
     timestamps: false
