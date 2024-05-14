@@ -32,6 +32,10 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
+      notes: {
+        type: Sequelize.TEXT,
+        allowNull: true,
+      },
     });
   },
 
