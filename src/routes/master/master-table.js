@@ -35,10 +35,7 @@
  *           format: date
  *           description: The date the table was deleted
  *       example:
- *         name: admin1
- *         username: admin1
- *         password: admin123!
- *         role_id: 1
+ *         no: 10
  */
 /**
  * @swagger
