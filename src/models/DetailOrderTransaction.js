@@ -17,7 +17,11 @@ const DetailOrderTransaction = sequelize.define('DetailOrderTransaction', {
   },
   menu_id: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: false,
+    references: {
+      model: 'Menus',
+      key: 'id'
+    }
   },
   quantity: {
     type: DataTypes.INTEGER,

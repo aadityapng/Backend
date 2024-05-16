@@ -21,6 +21,9 @@ const OrderTransaction = sequelize.define('OrderTransaction', {
   },
   payment_method: {
     type: DataTypes.STRING
+  },
+  order_status: {
+    type: DataTypes.STRING
   }
 }, {
   timestamps: false,

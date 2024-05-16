@@ -4,6 +4,7 @@ const DetailOrderTransaction = require("../../../models/DetailOrderTransaction")
 module.exports = async (req, res) => {
   req.body.date = new Date();
   req.body.payment_status = "Sudah Dibayar";
+  req.body.order_status = "Menunggu Verifikasi Admin";
   const {
     table_id,
     payment_method,
@@ -11,6 +12,7 @@ module.exports = async (req, res) => {
     payment_amount,
     date,
     payment_status,
+    order_status,
   } = req.body;
   try {
     let totalAmount = 0;
@@ -30,6 +32,7 @@ module.exports = async (req, res) => {
       date,
       payment_method,
       payment_status,
+      order_status,
     });
 
     for (let i = 0; i < menus.length; i++) {

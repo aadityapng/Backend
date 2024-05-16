@@ -39,4 +39,8 @@ router.use("/api", cartRoute);
 const paymentRoute = require("./user/paymentRoute");
 router.use("/api", paymentRoute);
 
+// Routing Order
+const orderRoute = require("./order.js");
+router.use("/order", orderRoute);
+
 module.exports = router;
