@@ -31,6 +31,9 @@ module.exports = {
       payment_method: {
         type: Sequelize.STRING,
       },
+      order_status: {
+        type: Sequelize.STRING,
+      },
     });
   },
 
