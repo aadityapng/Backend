@@ -7,6 +7,7 @@ const bodyParser = require("body-parser"),
   swaggerUi = require("swagger-ui-express");
 
 const path = require("path");
+const { errHandler } = require("./services/errorHandler.js");
 
 // swagger options
 const options = {
@@ -33,8 +34,9 @@ const PORT = process.env.PORT || 8000;
 
 const sequelize = require("./config/db.js");
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(errHandler);
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/assets", express.static("public/images")); //Middleware ini digunakan untuk menyajikan file statis, seperti gambar, stylesheet, atau script JavaScript, kepada klien
 
 // meddleware untuk menghandle error upload dll (error handling)

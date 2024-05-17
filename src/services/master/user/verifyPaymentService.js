@@ -14,19 +14,20 @@ module.exports = async (req, res) => {
     payment_status,
     order_status,
   } = req.body;
+
+  let totalAmount = 0;
+  for (let i = 0; i < menus.length; i++) {
+    const menu = menus[i];
+    totalAmount += menu.total_price;
+  }
+
+  if (totalAmount !== payment_amount) {
+    return res
+      .status(500)
+      .json({ message: "Payment amount must be equal with total amount" });
+  }
+
   try {
-    let totalAmount = 0;
-    for (let i = 0; i < menus.length; i++) {
-      const menu = menus[i];
-      totalAmount += menu.total_price;
-    }
-
-    if (totalAmount !== payment_amount) {
-      res
-        .status(500)
-        .json({ message: "Payment amount must be equal with total amount" });
-    }
-
     const order = await OrderTransaction.create({
       table_id,
       date,
@@ -35,9 +36,10 @@ module.exports = async (req, res) => {
       order_status,
     });
 
+    let detailOrder = [];
     for (let i = 0; i < menus.length; i++) {
       const menu = menus[i];
-      await DetailOrderTransaction.create({
+      detailOrder.push({
         order_id: order.id,
         menu_id: menu.id,
         quantity: menu.quantity,
@@ -46,8 +48,10 @@ module.exports = async (req, res) => {
       });
     }
 
+    await DetailOrderTransaction.bulkCreate(detailOrder);
+
     return order.id;
   } catch (error) {
-    res.status(500).json({ message: error });
+    return res.status(500).json({ message: error });
   }
 };

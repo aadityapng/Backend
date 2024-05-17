@@ -4,6 +4,10 @@ const router = express.Router();
 // Middleware autentikasi
 const authMiddleware = require("../middleware/auth.js");
 
+// Routing untuk Payment
+const paymentRoute = require("./user/paymentRoute");
+router.use("/api", paymentRoute);
+
 // Routing untuk autentikasi
 const authRoute = require("./auth.js");
 router.use("/auth", authRoute);
@@ -34,10 +38,6 @@ router.use("/api", menuRoute);
 // Routing untuk Cart
 const cartRoute = require("./user/cartRoute.js");
 router.use("/api", cartRoute);
-
-// Routing untuk Payment
-const paymentRoute = require("./user/paymentRoute");
-router.use("/api", paymentRoute);
 
 // Routing Order
 const orderRoute = require("./order.js");
