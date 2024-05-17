@@ -2,7 +2,7 @@ const verifyPaymentService = require("../../services/master/user/verifyPaymentSe
 
 exports.verifyPayment = async (req, res) => {
   const orderNumber = await verifyPaymentService(req, res);
-  res.status(200).json({
+  return res.status(200).json({
     message: "Payment verification successful",
     orderNumber: orderNumber,
   });
