@@ -12,6 +12,10 @@ router.use("/api", paymentRoute);
 const authRoute = require("./auth.js");
 router.use("/auth", authRoute);
 
+// Routing untuk List Menu
+const menuRoute = require("./user/listMenuRoute.js");
+router.use("/api", menuRoute);
+
 // Middleware autentikasi untuk rute yang memerlukan autentikasi
 router.use(authMiddleware);
 
@@ -30,10 +34,6 @@ router.use("/master-menu", masterMenuRoute);
 // Routing untuk Master Table
 const masterTableRoute = require("./master/master-table");
 router.use("/master-table", masterTableRoute);
-
-// Routing untuk List Menu
-const menuRoute = require("./user/listMenuRoute.js");
-router.use("/api", menuRoute);
 
 // Routing untuk Cart
 const cartRoute = require("./user/cartRoute.js");
