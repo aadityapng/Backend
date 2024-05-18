@@ -16,16 +16,16 @@ router.use("/auth", authRoute);
 const menuRoute = require("./user/listMenuRoute.js");
 router.use("/api", menuRoute);
 
+// Routing untuk Master Menu Categories
+const masterMenuCategoriesRoute = require("./master/master-menu-categories.js");
+router.use("/master-menu-categories", masterMenuCategoriesRoute);
+
 // Middleware autentikasi untuk rute yang memerlukan autentikasi
 router.use(authMiddleware);
 
 // Routing untuk Master Admin
 const masterAdminRoute = require("./master/master-admin.js");
 router.use("/master-admin", masterAdminRoute);
-
-// Routing untuk Master Menu Categories
-const masterMenuCategoriesRoute = require("./master/master-menu-categories.js");
-router.use("/master-menu-categories", masterMenuCategoriesRoute);
 
 // Routing untuk Master Menu
 const masterMenuRoute = require("./master/master-menu.js");

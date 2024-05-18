@@ -8,9 +8,9 @@ module.exports = {
       [
         {
           category_id: 1,
-          name: "Nasi Goreng",
+          name: "Bakso",
           price: 25000,
-          menu_photo: 'nasi_goreng.jpg',
+          menu_photo: "bakso.jpg",
           createdAt: new Date(),
           createdBy: 1,
           updatedAt: new Date(),
@@ -20,7 +20,7 @@ module.exports = {
           category_id: 1,
           name: "Mie Goreng",
           price: 20000,
-          menu_photo: 'mie_goreng.jpg',
+          menu_photo: "mie-goreng.jpg",
           createdAt: new Date(),
           createdBy: 1,
           updatedAt: new Date(),
@@ -28,9 +28,9 @@ module.exports = {
         },
         {
           category_id: 2,
-          name: "Es Teh",
+          name: "Es Jeruk",
           price: 5000,
-          menu_photo: 'es_teh.jpg',
+          menu_photo: "es-jeruk.jpg",
           createdAt: new Date(),
           createdBy: 1,
           updatedAt: new Date(),
