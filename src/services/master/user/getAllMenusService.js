@@ -3,7 +3,7 @@ const Menu = require("../../../models/listMenu");
 module.exports = async () => {
   try {
     const menus = await Menu.findAll({
-      attributes: ["id", "name", "price", "stock"],
+      attributes: ["id", "name", "price"],
     });
     return menus;
   } catch (error) {
