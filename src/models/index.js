@@ -13,8 +13,11 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.menu = require('./menu')
+db.menu_category = require('./masterMenuCategories')
 db.orderDetail = require('./DetailOrderTransaction')
 
+db.menu.hasMany(db.menu_category, { foreignKey: 'id' })
+db.menu_category.belongsTo(db.menu, { foreignKey: 'category_id' })
 db.menu.hasMany(db.orderDetail, { foreignKey: 'menu_id' })
 db.orderDetail.belongsTo(db.menu, {
     foreignKey: 'menu_id'

@@ -1,9 +1,17 @@
-const Menu = require("../../../models/listMenu");
+const db = require("../../../models");
+const Menu = db.menu;
+const MasterMenuCategory = db.menu_category;
 
 module.exports = async () => {
   try {
     const menus = await Menu.findAll({
       attributes: ["id", "name", "price"],
+      where: { deletedAt: null },
+      include: {
+        model: MasterMenuCategory,
+        required: true,
+        attributes: ["id", "name"],
+      },
     });
     return menus;
   } catch (error) {
