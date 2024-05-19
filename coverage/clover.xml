@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1716107769728" clover="3.2.0">
-  <project timestamp="1716107769728" name="All files">
-    <metrics statements="233" coveredstatements="229" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2" elements="239" coveredelements="233" complexity="0" loc="233" ncloc="233" packages="3" files="7" classes="7"/>
+<coverage generated="1716111315337" clover="3.2.0">
+  <project timestamp="1716111315337" name="All files">
+    <metrics statements="234" coveredstatements="230" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="2" elements="240" coveredelements="234" complexity="0" loc="234" ncloc="234" packages="3" files="7" classes="7"/>
     <package name="models">
-      <metrics statements="202" coveredstatements="202" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="203" coveredstatements="203" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="DetailOrderTransaction.js" path="C:\Users\arina\Projects\ExpressJS\ME\Binar\api-ss\src\models\DetailOrderTransaction.js">
         <metrics statements="43" coveredstatements="43" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -132,7 +132,7 @@
         <line num="28" count="1" type="stmt"/>
       </file>
       <file name="masterMenuCategories.js" path="C:\Users\arina\Projects\ExpressJS\ME\Binar\api-ss\src\models\masterMenuCategories.js">
-        <metrics statements="33" coveredstatements="33" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="34" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -166,6 +166,7 @@
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
       </file>
       <file name="menu.js" path="C:\Users\arina\Projects\ExpressJS\ME\Binar\api-ss\src\models\menu.js">
         <metrics statements="51" coveredstatements="51" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
