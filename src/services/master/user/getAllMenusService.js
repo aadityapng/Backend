@@ -5,7 +5,7 @@ const MasterMenuCategory = db.menu_category;
 module.exports = async () => {
   try {
     const menus = await Menu.findAll({
-      attributes: ["id", "name", "price"],
+      attributes: ["id", "name", "price", "menu_photo"],
       where: { deletedAt: null },
       include: {
         model: MasterMenuCategory,
